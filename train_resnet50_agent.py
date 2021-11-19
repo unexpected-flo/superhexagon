@@ -4,8 +4,8 @@ import pathlib as P
 import matplotlib.pyplot as plt
 
 
-train_folder = P.Path("./train_data")
-val_folder = P.Path("./val_data")
+train_folder = P.Path("./train_data_BW")
+val_folder = P.Path("./val_data_BW")
 train_set = tf.keras.preprocessing.image_dataset_from_directory(train_folder,
                                                                 seed=25,
                                                                 shuffle=True,
@@ -69,7 +69,7 @@ history = model.fit(train_set,
                     epochs=epochs,
                     validation_data=val_set)
                    # class_weight=class_weight)
-save_path = P.Path("./resnet50_trained_sftmx_rot/")
+save_path = P.Path("./resnet50_trained_sftmx_BW/")
 save_path.mkdir(exist_ok=True)
 model.save(save_path)
 
